@@ -1,34 +1,18 @@
 package com.prestashop.test.login;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import com.prestashop.test.core.TestBase;
+import com.prestashop.test.pages.HomePage;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class LoginTest {
-    public String baseUrl = "http://localhost/prestashop/en/";
-    public String driverPath = "C:\\Users\\gorea\\prestashopATF-java\\src\\main\\resources\\chromedriver.exe";
-    public WebDriver driver;
-
-    @BeforeTest
-    public void setBaseUrl(){
-        System.out.println("Starting chromedriver");
-        System.setProperty("webdriver.chrome.driver", driverPath);
-        driver = new ChromeDriver();
-        driver.get(baseUrl);
-    }
+public class LoginTest extends TestBase {
 
     @Test
     public void verifyHomePageTitle(){
         String expectedTitle = "OLSO";
-        String actualTitle = driver.getTitle();
+        HomePage homePage = new HomePage(driver);
+        homePage.goTo();
+        String actualTitle = homePage.getTitle();
         Assert.assertEquals(expectedTitle, actualTitle);
-    }
-
-    @AfterTest
-    public void disposeDriver(){
-        driver.quit();
     }
 }

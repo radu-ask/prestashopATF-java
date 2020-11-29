@@ -5,17 +5,20 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 public class TestBase {
-    public WebDriver driver;
+    private WebDriver driver;
 
     @BeforeTest
     public void beforeTest(){
-        WebDriverFactory driverFactory = new WebDriverFactory();
-        driver = driverFactory.getDriver(BrowserType.CHROME);
+        driver = WebDriverFactory.getDriver(BrowserType.CHROME);
     }
 
     @AfterTest
     public void afterTest(){
         driver.close();
         driver.quit();
+    }
+
+    public WebDriver getDriver(){
+        return driver;
     }
 }

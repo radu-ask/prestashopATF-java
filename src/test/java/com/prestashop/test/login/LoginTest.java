@@ -10,7 +10,7 @@ public class LoginTest extends TestBase {
     @Test
     public void verifyHomePageTitle(){
         String expectedTitle = "OLSO";
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         homePage.goTo();
         String actualTitle = homePage.getTitle();
         Assert.assertEquals(expectedTitle, actualTitle);

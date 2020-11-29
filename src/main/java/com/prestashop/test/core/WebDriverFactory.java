@@ -8,21 +8,32 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverFactory {
 
-    private WebDriver driver;
+    private WebDriverFactory(){
+        throw new IllegalStateException("WebDriverFactory class cannot be instantiated!");
+    }
 
-    public WebDriver getDriver(BrowserType browserType){
-        switch (browserType){
-            case CHROME:
-                WebDriverManager.chromedriver().setup();
-                return new ChromeDriver();
-            case EDGE:
-                WebDriverManager.edgedriver().setup();
-                return new EdgeDriver();
-            case FIREFOX:
-                WebDriverManager.firefoxdriver().setup();
-                return new FirefoxDriver();
-            default:
-                throw new IllegalArgumentException(String.format("Browser %s doesn't exist!", browserType.toString()));
+    public static WebDriver getDriver(BrowserType browserType){
+        WebDriver driver = null;
+        try {
+            switch (browserType){
+                case CHROME:
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
+                    break;
+                case EDGE:
+                    WebDriverManager.edgedriver().setup();
+                    driver = new EdgeDriver();
+                    break;
+                case FIREFOX:
+                    WebDriverManager.firefoxdriver().setup();
+                    driver = new FirefoxDriver();
+                    break;
+                default:
+                    throw new IllegalArgumentException(String.format("Browser %s doesn't exist!", browserType.toString()));
+            }
+        }catch (Exception e){
+            System.out.println("Unable to load driver: " + e.getMessage());
         }
+        return driver;
     }
 }

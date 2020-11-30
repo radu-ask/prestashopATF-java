@@ -8,14 +8,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverFactory {
 
-    private WebDriverFactory(){
+    private WebDriverFactory() {
         throw new IllegalStateException("WebDriverFactory class cannot be instantiated!");
     }
 
-    public static WebDriver getDriver(BrowserType browserType){
+    public static WebDriver getDriver(BrowserType browserType) {
         WebDriver driver = null;
         try {
-            switch (browserType){
+            switch (browserType) {
                 case CHROME:
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
@@ -31,7 +31,7 @@ public class WebDriverFactory {
                 default:
                     throw new IllegalArgumentException(String.format("Browser %s doesn't exist!", browserType.toString()));
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Unable to load driver: " + e.getMessage());
         }
         return driver;

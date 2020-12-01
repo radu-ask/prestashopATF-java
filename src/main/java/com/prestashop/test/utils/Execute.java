@@ -5,6 +5,20 @@ import java.util.function.Supplier;
 
 public final class Execute {
 
+    public static <T> T withRetry(Supplier<T> function, Supplier<Boolean> exitCondition){
+        return withRetry(Constants.MAX_RETRIES, function, exitCondition);
+    }
+
+    public static <T> T withRetry(int maxRetries, Supplier<T> function, Supplier<Boolean> exitCondition){
+        int attempt = 0;
+        while (attempt++<maxRetries){
+            T result = function.get();
+            if(exitCondition.get()) return result;
+            if(attempt>=maxRetries) break;
+        }
+        throw new RuntimeException("Exit condition not satisfied! Total attempts: " + attempt);
+    }
+
     public static <T> T withRetry(Supplier<T> function) {
         return withRetry(Constants.MAX_RETRIES, function);
     }

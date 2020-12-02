@@ -1,4 +1,4 @@
-package com.prestashop.test.core;
+package com.prestashop.core.web;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -12,10 +12,10 @@ public class WebDriverFactory {
         throw new IllegalStateException("WebDriverFactory class cannot be instantiated!");
     }
 
-    public static WebDriver getDriver(BrowserType browserType) {
+    public static WebDriver getDriver(WebBrowserType webBrowserType) {
         WebDriver driver = null;
         try {
-            switch (browserType) {
+            switch (webBrowserType) {
                 case CHROME:
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
@@ -29,7 +29,7 @@ public class WebDriverFactory {
                     driver = new FirefoxDriver();
                     break;
                 default:
-                    throw new IllegalArgumentException(String.format("Browser %s doesn't exist!", browserType.toString()));
+                    throw new IllegalArgumentException(String.format("Browser %s doesn't exist!", webBrowserType.toString()));
             }
         } catch (Exception e) {
             System.out.println("Unable to load driver: " + e.getMessage());

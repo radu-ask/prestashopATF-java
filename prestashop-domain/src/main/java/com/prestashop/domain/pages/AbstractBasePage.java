@@ -1,4 +1,4 @@
-package com.prestashop.test.pages;
+package com.prestashop.domain.pages;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

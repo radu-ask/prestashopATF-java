@@ -1,4 +1,4 @@
-package com.prestashop.test.utils;
+package com.prestashop.core.utils;
 
 import java.security.SecureRandom;
 import java.util.Optional;

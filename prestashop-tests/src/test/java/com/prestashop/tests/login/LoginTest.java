@@ -1,8 +1,7 @@
-package com.prestashop.test.login;
+package com.prestashop.tests.login;
 
-import com.prestashop.test.core.TestBase;
-import com.prestashop.test.pages.HomePage;
-import com.prestashop.test.utils.Execute;
+import com.prestashop.tests.TestBase;
+import com.prestashop.domain.pages.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

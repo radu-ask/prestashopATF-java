@@ -1,5 +1,7 @@
-package com.prestashop.test.core;
+package com.prestashop.tests;
 
+import com.prestashop.core.web.WebBrowserType;
+import com.prestashop.core.web.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -9,7 +11,7 @@ public class TestBase {
 
     @BeforeTest
     public void beforeTest(){
-        driver = WebDriverFactory.getDriver(BrowserType.CHROME);
+        driver = WebDriverFactory.getDriver(WebBrowserType.CHROME);
     }
 
     @AfterTest

@@ -1,4 +1,4 @@
-package com.prestashop.test.utils;
+package com.prestashop.core.utils;
 
 import java.util.Arrays;
 import java.util.function.Supplier;
@@ -80,6 +80,6 @@ public final class Execute {
     private static void throwLastException(Exception lastException) {
         throw lastException != null ?
                 ((RuntimeException) lastException) :
-                new RuntimeException(lastException);
+                new RuntimeException();
     }
 }

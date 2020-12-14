@@ -1,24 +1,17 @@
 package com.prestashop.domain.pages;
 
+import com.prestashop.domain.pages.base.AbstractBasePage;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends AbstractBasePage {
-    private String baseUrl = "http://localhost/prestashop/en/";
-
-    @FindBy(xpath = "xpath")
-    private WebElement element;
+    static final Logger logger = Logger.getLogger(HomePage.class);
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-    public void goTo() {
-        driver.get(baseUrl);
-    }
+    public void login(){
 
-    public String getTitle() {
-        return driver.getTitle();
     }
 }

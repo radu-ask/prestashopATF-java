@@ -13,5 +13,6 @@ public class LoginTest extends TestBase {
         HomePage homePage = getPrestashopApplication().goTo();
         String actualTitle = homePage.getTitle();
         Assert.assertEquals(expectedTitle, actualTitle);
+        homePage.deleteTextFromElement(getPrestashopApplication().getNavigationMenu().getTextboxSearch());
     }
 }

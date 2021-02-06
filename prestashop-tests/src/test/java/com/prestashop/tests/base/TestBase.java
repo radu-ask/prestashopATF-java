@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeTest;
 
 public class TestBase {
     private WebDriver driver;
-    public PrestashopApplication prestashopApplication;
+    private PrestashopApplication prestashopApplication;
 
     @BeforeTest
     public void beforeTest(){

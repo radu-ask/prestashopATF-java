@@ -1,5 +1,6 @@
 package com.prestashop.domain.pages.base;
 
+import com.prestashop.core.utils.Constants;
 import com.prestashop.core.utils.Execute;
 import com.prestashop.domain.pages.components.NavigationMenu;
 import com.prestashop.domain.pages.components.TopHeader;
@@ -16,16 +17,15 @@ import java.util.logging.Logger;
 
 public abstract class AbstractBasePage {
     static final Logger logger = Logger.getLogger(AbstractBasePage.class.getName());
-    private final int defaultMaxWaitTime = 20;
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected JavascriptExecutor jsExecutor;
 
     public AbstractBasePage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, defaultMaxWaitTime);
-        driver.manage().timeouts().implicitlyWait(defaultMaxWaitTime, TimeUnit.SECONDS);
-        PageFactory.initElements(new AjaxElementLocatorFactory(driver, defaultMaxWaitTime), this);
+        wait = new WebDriverWait(driver, Constants.MAX_WAIT_TIME);
+        driver.manage().timeouts().implicitlyWait(Constants.MAX_WAIT_TIME, TimeUnit.SECONDS);
+        PageFactory.initElements(new AjaxElementLocatorFactory(driver, Constants.MAX_WAIT_TIME), this);
     }
 
     public void deleteTextFromElement(WebElement element) {

@@ -8,22 +8,22 @@ import org.openqa.selenium.support.FindBy;
 public class NavigationMenu extends AbstractBasePage {
 
     @FindBy(xpath = "//*[@id='_desktop_logo']/a")
-    private WebElement logo;
+    WebElement logo;
 
     @FindBy(xpath = "//*[@id='category-3']/a")
-    private WebElement menuItemClothes;
+    WebElement menuItemClothes;
 
     @FindBy(xpath = "//*[@id='category-6']/a")
-    private WebElement menuItemAccessories;
+    WebElement menuItemAccessories;
 
     @FindBy(xpath = "//*[@id='category-9']/a")
-    private WebElement menuItemArt;
+    WebElement menuItemArt;
 
     @FindBy(xpath = "//*[@placeholder='Search our catalog']")
-    private WebElement textboxSearch;
+    WebElement textboxSearch;
 
     @FindBy(xpath = "//*[@id='search_widget']/form/button")
-    private WebElement buttonSearch;
+    WebElement buttonSearch;
 
     public NavigationMenu(WebDriver driver) {
         super(driver);
@@ -32,5 +32,9 @@ public class NavigationMenu extends AbstractBasePage {
     public void searchFor(String item) {
         setElementText(textboxSearch, item);
         buttonSearch.click();
+    }
+
+    public WebElement getTextboxSearch() {
+        return textboxSearch;
     }
 }

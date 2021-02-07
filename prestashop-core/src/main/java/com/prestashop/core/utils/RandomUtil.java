@@ -1,8 +1,6 @@
 package com.prestashop.core.utils;
 
 import java.security.SecureRandom;
-import java.util.Optional;
-import java.util.OptionalInt;
 
 public class RandomUtil {
 

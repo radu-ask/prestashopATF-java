@@ -7,6 +7,10 @@ import org.openqa.selenium.support.FindBy;
 
 public class NavigationMenu extends AbstractBasePage {
 
+    public NavigationMenu(WebDriver driver) {
+        super(driver);
+    }
+
     @FindBy(xpath = "//*[@id='_desktop_logo']/a")
     WebElement logo;
 
@@ -24,10 +28,6 @@ public class NavigationMenu extends AbstractBasePage {
 
     @FindBy(xpath = "//*[@id='search_widget']/form/button")
     WebElement buttonSearch;
-
-    public NavigationMenu(WebDriver driver) {
-        super(driver);
-    }
 
     public void searchFor(String item) {
         setElementText(textboxSearch, item);

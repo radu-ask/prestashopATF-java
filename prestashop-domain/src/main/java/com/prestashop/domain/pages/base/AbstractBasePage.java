@@ -2,8 +2,8 @@ package com.prestashop.domain.pages.base;
 
 import com.prestashop.core.utils.Constants;
 import com.prestashop.core.utils.Execute;
-import com.prestashop.domain.pages.components.NavigationMenu;
-import com.prestashop.domain.pages.components.TopHeader;
+import com.prestashop.core.web.element.Element;
+import com.prestashop.core.web.factory.ElementFactory;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -25,7 +25,7 @@ public abstract class AbstractBasePage {
         this.driver = driver;
         wait = new WebDriverWait(driver, Constants.MAX_WAIT_TIME);
         driver.manage().timeouts().implicitlyWait(Constants.MAX_WAIT_TIME, TimeUnit.SECONDS);
-        PageFactory.initElements(new AjaxElementLocatorFactory(driver, Constants.MAX_WAIT_TIME), this);
+        ElementFactory.initElements(new AjaxElementLocatorFactory(driver, Constants.MAX_WAIT_TIME), this);
     }
 
     public void deleteTextFromElement(WebElement element) {

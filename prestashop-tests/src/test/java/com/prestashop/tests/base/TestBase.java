@@ -1,5 +1,6 @@
 package com.prestashop.tests.base;
 
+import com.prestashop.core.utils.DateTimeUtil;
 import com.prestashop.core.web.WebBrowserType;
 import com.prestashop.core.web.WebDriverFactory;
 import com.prestashop.domain.pages.base.PrestashopApplication;

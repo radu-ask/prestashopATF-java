@@ -9,7 +9,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class WebDriverFactory {
 
     private WebDriverFactory() {
-        throw new IllegalStateException("WebDriverFactory class cannot be instantiated!");
     }
 
     public static WebDriver getDriver(WebBrowserType webBrowserType) {

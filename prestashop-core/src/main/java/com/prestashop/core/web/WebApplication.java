@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 public class WebApplication {
     public WebDriver driver;
 
-    public WebApplication(WebDriver webDriver){
+    public WebApplication(WebDriver webDriver) {
         this.driver = webDriver;
     }
 }

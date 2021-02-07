@@ -1,4 +1,4 @@
-package com.prestashop.core.web;
+package com.prestashop.core.web.element;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Coordinates;

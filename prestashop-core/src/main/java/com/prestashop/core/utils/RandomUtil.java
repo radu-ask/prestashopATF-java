@@ -6,11 +6,10 @@ import java.util.OptionalInt;
 
 public class RandomUtil {
 
-    private RandomUtil(){
-        throw new IllegalStateException("Cannot instantiate RandomUtil class!");
+    private RandomUtil() {
     }
 
-    public static int getRandomNumberInRange(int min, int max){
+    public static int getRandomNumberInRange(int min, int max) {
         final SecureRandom random = new SecureRandom();
         return random.ints(min, max).limit(1).findFirst().getAsInt();
     }

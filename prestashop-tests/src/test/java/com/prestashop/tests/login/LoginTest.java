@@ -11,7 +11,7 @@ public class LoginTest extends TestBase {
     public void verifyHomePageTitle() {
         String expectedTitle = "OLSO";
         ClothesPage clothesPage = new ClothesPage(getDriver());
-        clothesPage.checkboxMen.toggle();
-        Assert.assertTrue(clothesPage.checkboxMen.isChecked());
+        clothesPage.getCheckboxMen().toggle();
+        Assert.assertTrue(clothesPage.getCheckboxMen().isChecked());
     }
 }

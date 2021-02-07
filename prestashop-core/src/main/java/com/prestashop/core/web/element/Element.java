@@ -3,7 +3,6 @@ package com.prestashop.core.web.element;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-@ImplementedBy(ElementImpl.class)
 public interface Element{
 
     String getText();

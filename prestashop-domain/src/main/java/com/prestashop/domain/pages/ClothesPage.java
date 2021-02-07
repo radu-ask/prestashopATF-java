@@ -1,5 +1,6 @@
 package com.prestashop.domain.pages;
 
+import com.prestashop.core.web.element.ElementFactory;
 import com.prestashop.core.web.widgets.Checkbox;
 import com.prestashop.domain.pages.base.AbstractBasePage;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +14,9 @@ public class ClothesPage extends AbstractBasePage {
     }
 
     @FindBy(xpath = "//*[@id=\"checkbox\"]")
-    public Checkbox checkboxMen;
+    private WebElement checkboxMen;
 
+    public Checkbox getCheckboxMen() {
+        return ElementFactory.getAsCheckbox(checkboxMen);
+    }
 }

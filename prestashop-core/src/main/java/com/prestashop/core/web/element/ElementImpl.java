@@ -1,9 +1,11 @@
 package com.prestashop.core.web.element;
 
+import com.prestashop.core.utils.Constants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * An implementation of the Element interface. It delegates its work to an underlying WebElement instance
@@ -60,5 +62,9 @@ public class ElementImpl implements Element {
 
     public WebElement getElement(){
         return element;
+    }
+
+    public WebDriverWait getWait() {
+        return new WebDriverWait(getDriver(), Constants.MAX_WAIT_TIME);
     }
 }

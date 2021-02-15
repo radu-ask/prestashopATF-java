@@ -26,5 +26,4 @@ public class PrestashopApplication extends WebApplication {
         return new TopHeader(getDriver());
     }
 
-    //TODO: implement method to dynamically get page objects
 }

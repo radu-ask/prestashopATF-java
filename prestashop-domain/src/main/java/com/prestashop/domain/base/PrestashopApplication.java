@@ -1,4 +1,4 @@
-package com.prestashop.domain.pages.base;
+package com.prestashop.domain.base;
 
 import com.prestashop.core.web.WebApplication;
 import com.prestashop.domain.pages.HomePage;

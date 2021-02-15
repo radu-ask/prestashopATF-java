@@ -1,9 +1,8 @@
 package com.prestashop.tests.base;
 
-import com.prestashop.core.utils.DateTimeUtil;
 import com.prestashop.core.web.WebBrowserType;
 import com.prestashop.core.web.WebDriverFactory;
-import com.prestashop.domain.pages.base.PrestashopApplication;
+import com.prestashop.domain.base.PrestashopApplication;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;

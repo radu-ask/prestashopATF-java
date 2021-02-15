@@ -14,16 +14,16 @@ public class PrestashopApplication extends WebApplication {
     }
 
     public HomePage goTo(){
-        driver.get(URL);
-        return new HomePage(driver);
+        getDriver().get(URL);
+        return new HomePage(getDriver());
     }
 
     public NavigationMenu getNavigationMenu() {
-        return new NavigationMenu(driver);
+        return new NavigationMenu(getDriver());
     }
 
     public TopHeader getTopHeader() {
-        return new TopHeader(driver);
+        return new TopHeader(getDriver());
     }
 
     //TODO: implement method to dynamically get page objects

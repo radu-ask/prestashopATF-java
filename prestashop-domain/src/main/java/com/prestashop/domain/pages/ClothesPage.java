@@ -2,7 +2,7 @@ package com.prestashop.domain.pages;
 
 import com.prestashop.core.web.element.ElementFactory;
 import com.prestashop.core.web.widgets.Checkbox;
-import com.prestashop.domain.pages.base.AbstractBasePage;
+import com.prestashop.core.web.AbstractBasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

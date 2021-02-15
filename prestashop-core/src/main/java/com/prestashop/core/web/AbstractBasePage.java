@@ -1,8 +1,7 @@
-package com.prestashop.domain.pages.base;
+package com.prestashop.core.web;
 
 import com.prestashop.core.utils.Constants;
 import com.prestashop.core.utils.Execute;
-import com.prestashop.core.web.element.ElementFactory;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

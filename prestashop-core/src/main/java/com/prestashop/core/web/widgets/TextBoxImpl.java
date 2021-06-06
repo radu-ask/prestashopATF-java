@@ -5,9 +5,9 @@ import com.prestashop.core.web.element.ElementImpl;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class TextboxImpl extends ElementImpl implements Textbox {
+public class TextBoxImpl extends ElementImpl implements TextBox {
 
-    public TextboxImpl(WebElement element) {
+    public TextBoxImpl(WebElement element) {
         super(element);
     }
 

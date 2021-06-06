@@ -17,6 +17,12 @@ public class HomePage extends AbstractBasePage {
         return new ClothesPage(driver);
     }
     public void login(){
+        //TODO: implement logger in the project
+        // Add dependency*
+        // Create properties file*
+        // Create Listener
+        // Generate testng.xml file for listener
 
     }
+
 }

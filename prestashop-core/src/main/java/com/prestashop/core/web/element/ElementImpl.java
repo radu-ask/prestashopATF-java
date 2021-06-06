@@ -51,6 +51,7 @@ public class ElementImpl implements Element {
 
     @Override
     public void clickAndWait() {
+        //TODO: implement a method to wait for page to load
         throw new UnsupportedOperationException("Not implemented!");
     }
 

@@ -1,4 +1,4 @@
-package com.prestashop.tests.base;
+package com.prestashop.tests.core;
 
 import com.prestashop.core.web.WebBrowserType;
 import com.prestashop.core.web.WebDriverFactory;
@@ -30,4 +30,6 @@ public class TestBase {
     public PrestashopApplication getPrestashopApplication() {
         return prestashopApplication;
     }
+
+    // TODO: implement method for taking the screenshots
 }

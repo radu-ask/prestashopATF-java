@@ -1,6 +1,8 @@
 package com.prestashop.domain.pages.components;
 
 import com.prestashop.core.web.AbstractBasePage;
+import com.prestashop.core.web.element.ElementFactory;
+import com.prestashop.core.web.widgets.TextBox;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,29 +14,29 @@ public class NavigationMenu extends AbstractBasePage {
     }
 
     @FindBy(xpath = "//*[@id='_desktop_logo']/a")
-    WebElement logo;
+    private WebElement logo;
 
     @FindBy(xpath = "//*[@id='category-3']/a")
-    WebElement menuItemClothes;
+    private WebElement menuItemClothes;
 
     @FindBy(xpath = "//*[@id='category-6']/a")
-    WebElement menuItemAccessories;
+    private WebElement menuItemAccessories;
 
     @FindBy(xpath = "//*[@id='category-9']/a")
-    WebElement menuItemArt;
+    private WebElement menuItemArt;
 
     @FindBy(xpath = "//*[@placeholder='Search our catalog']")
-    WebElement textboxSearch;
+    private WebElement textBoxSearch;
 
     @FindBy(xpath = "//*[@id='search_widget']/form/button")
-    WebElement buttonSearch;
+    private WebElement buttonSearch;
 
     public void searchFor(String item) {
-        setElementText(textboxSearch, item);
+        getTextboxSearch().setText(item);
         buttonSearch.click();
     }
 
-    public WebElement getTextboxSearch() {
-        return textboxSearch;
+    public TextBox getTextboxSearch() {
+        return ElementFactory.getAsTextBox(textBoxSearch);
     }
 }

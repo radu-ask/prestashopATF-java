@@ -34,7 +34,7 @@ public final class Execute {
                 System.err.println("\nFAILED - on attempt " + attempt + " out of " + maxRetries);
                 e.printStackTrace();
                 if (attempt >= maxRetries) break;
-                DateTimeUtil.wait(500 * attempt);
+                ThreadUtil.wait(500 * attempt);
             }
         }
         throwLastException(lastException);
@@ -69,7 +69,7 @@ public final class Execute {
                     System.err.println("\nFAILED - on attempt " + attempt + " out of " + maxRetries);
                     e.printStackTrace();
                     if (attempt >= maxRetries) break;
-                    DateTimeUtil.wait(500 * attempt);
+                    ThreadUtil.wait(500 * attempt);
                 }
             }
         }

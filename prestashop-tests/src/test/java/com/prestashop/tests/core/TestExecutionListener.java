@@ -1,18 +1,18 @@
-package com.prestashop.core.utils.logger;
+package com.prestashop.tests.core;
 
+import com.prestashop.core.utils.logger.LogUtil;
 import org.apache.logging.log4j.Logger;
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;
 import org.testng.ITestResult;
 
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.Map;
-
 public class TestExecutionListener implements IInvokedMethodListener {
 
     private static final Logger logger = LogUtil.getInstance();
-    private final Map<Integer, Deque<String>> logsMap = new HashMap<Integer, Deque<String>>();
+
+    // TODO: running tests
+    //  run multiple tests in parallel
+    //  find a way to output logging separately for each test
 
     @Override
     public void beforeInvocation(IInvokedMethod iInvokedMethod, ITestResult iTestResult) {

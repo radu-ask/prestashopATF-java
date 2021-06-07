@@ -11,6 +11,13 @@
 
     <artifactId>prestashop-core</artifactId>
 
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources/config/logger</directory>
+            </resource>
+        </resources>
+    </build>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>

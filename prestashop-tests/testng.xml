@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Suite1" verbose="1" >
     <listeners>
-        <listener class-name="com.prestashop.core.utils.logger.TestProgressListener"/>
-        <listener class-name="com.prestashop.core.utils.logger.TestExecutionListener"/>
+        <listener class-name="com.prestashop.tests.core.TestProgressListener"/>
+        <listener class-name="com.prestashop.tests.core.TestExecutionListener"/>
     </listeners>
     <test name="Regression1"   >
         <packages>

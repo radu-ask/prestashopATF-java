@@ -1,11 +1,11 @@
 package com.prestashop.domain.pages.components;
 
-import com.prestashop.core.web.AbstractBasePage;
+import com.prestashop.core.web.WebBasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class TopHeader extends AbstractBasePage {
+public class TopHeader extends WebBasePage {
 
     @FindBy(xpath = "//*[@id='contact-link']/a")
     private WebElement linkContactUs;

@@ -1,6 +1,9 @@
-package com.prestashop.core.utils.logger;
+package com.prestashop.tests.core;
 
+import com.prestashop.core.utils.WebDriverUtil;
+import com.prestashop.core.utils.logger.LogUtil;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -23,6 +26,13 @@ public class TestProgressListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         logger.info("Failed with exception: " + iTestResult.getThrowable());
+        Object currentClass = iTestResult.getInstance();
+        WebDriver driver = ((TestBase)currentClass).getDriver();
+        if(driver != null){
+            WebDriverUtil.takeScreenShotAndStoreIt(driver);
+        }else{
+            logger.error("Failed to take a screenshot. The driver was null.");
+        }
     }
 
     @Override

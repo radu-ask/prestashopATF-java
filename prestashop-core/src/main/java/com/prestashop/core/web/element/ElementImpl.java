@@ -40,11 +40,6 @@ public class ElementImpl implements Element {
     }
 
     @Override
-    public WebElement unwrap() {
-        return element;
-    }
-
-    @Override
     public void click() {
         element.click();
     }
@@ -61,7 +56,12 @@ public class ElementImpl implements Element {
         actions.moveToElement(element).build().perform();
     }
 
-    public WebElement getElement(){
+    @Override
+    public WebElement unwrap() {
+        return getElement();
+    }
+
+    protected WebElement getElement(){
         return element;
     }
 

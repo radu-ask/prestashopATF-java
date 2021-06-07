@@ -1,6 +1,7 @@
 package com.prestashop.tests.login;
 
 import com.prestashop.core.utils.logger.LogUtil;
+import com.prestashop.domain.pages.HomePage;
 import com.prestashop.tests.core.TestBase;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
@@ -12,8 +13,7 @@ public class LoginTest extends TestBase {
 
     @Test(description = "Verify if the home page title is OLSO.")
     public void verifyHomePageTitle() {
-        getPrestashopApplication().goTo();
-        logger.info("Accessed the application.");
+        HomePage homePage = getApp();
         String expectedTitle = "OLSO";
         Assert.assertEquals(getDriver().getTitle(), expectedTitle);
     }

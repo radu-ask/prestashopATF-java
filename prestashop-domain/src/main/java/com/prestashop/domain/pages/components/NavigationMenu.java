@@ -1,13 +1,13 @@
 package com.prestashop.domain.pages.components;
 
-import com.prestashop.core.web.AbstractBasePage;
+import com.prestashop.core.web.WebBasePage;
 import com.prestashop.core.web.element.ElementFactory;
 import com.prestashop.core.web.widgets.TextBox;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class NavigationMenu extends AbstractBasePage {
+public class NavigationMenu extends WebBasePage {
 
     public NavigationMenu(WebDriver driver) {
         super(driver);

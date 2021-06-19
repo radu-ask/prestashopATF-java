@@ -66,7 +66,7 @@ public class TestProgressListener implements ITestListener {
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
         logger.info("Skipped with exception: " + iTestResult.getThrowable());
-        
+
         Markup markup = ExtentReportsUtil.getTestSkippedMarkup(iTestResult);
         extentTest.get().log(Status.SKIP, markup);
     }

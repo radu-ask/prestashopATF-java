@@ -25,8 +25,8 @@ public class PrestashopApplication extends WebApplication {
         return new TopHeader(getDriver());
     }
 
-    // TODO:
-    //  integrate the framework with cucumber BDD
-    //  integrate the framework with Jenkins
-    //  create beautiful reporting
+    // TODO: integrate the framework with cucumber BDD
+    // TODO: integrate the framework with Jenkins
+    // TODO: implement method to dynamically get page objects?
+    // TODO: Add [Extent Report] to the framework
 }

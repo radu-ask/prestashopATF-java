@@ -13,7 +13,4 @@ public class WebApplication {
     public WebDriver getDriver() {
         return driver;
     }
-
-    //TODO: implement method to dynamically get page objects?
-
 }

@@ -1,4 +1,4 @@
-package com.prestashop.tests.core;
+package com.prestashop.tests.base;
 
 import com.prestashop.core.utils.logger.LogUtil;
 import com.prestashop.core.web.WebBrowserType;
@@ -9,11 +9,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
 
-@Listeners({
-        TestProgressListener.class,
-        TestExecutionListener.class,})
 public class TestBase {
 
     private final Logger logger = LogUtil.getInstance();
@@ -45,6 +41,4 @@ public class TestBase {
     public HomePage getApp() {
         return new HomePage(driver);
     }
-
-    // TODO: implement method for taking the screenshots
 }

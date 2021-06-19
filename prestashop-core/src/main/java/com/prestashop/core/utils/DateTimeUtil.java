@@ -1,5 +1,7 @@
 package com.prestashop.core.utils;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class DateTimeUtil {
@@ -7,6 +9,16 @@ public class DateTimeUtil {
     private static final AtomicLong LAST_TIME_MS = new AtomicLong();
 
     private DateTimeUtil() {
+    }
+
+    public static String generateUniqueTimeStamp(String input){
+        return input + getUniqueCurrentTimeMS();
+    }
+
+    public static String generateTimeStamp(String input){
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
+        LocalDateTime now = LocalDateTime.now();
+        return input + now.format(timeFormatter);
     }
 
     private static long getUniqueCurrentTimeMS() {
@@ -18,9 +30,5 @@ public class DateTimeUtil {
             if (LAST_TIME_MS.compareAndSet(lastTime, now))
                 return now;
         }
-    }
-
-    public static String generateUniqueTimeStamp(String input){
-        return input + getUniqueCurrentTimeMS();
     }
 }

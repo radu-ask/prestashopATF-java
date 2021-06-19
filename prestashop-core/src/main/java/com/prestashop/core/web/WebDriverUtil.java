@@ -1,5 +1,6 @@
-package com.prestashop.core.utils;
+package com.prestashop.core.web;
 
+import com.prestashop.core.utils.DateTimeUtil;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -10,19 +11,20 @@ import java.io.IOException;
 
 public class WebDriverUtil {
 
-    public static void takeScreenShotAndStoreIt(WebDriver driver){
+    public static String takeScreenshotAndStoreIt(WebDriver driver){
         String defaultLocation = System.getProperty("user.dir") + "\\output\\screenshots";
-        try {
-            takeScreenShotAndStoreIt(driver, defaultLocation);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        return takeScreenshotAndStoreIt(driver, defaultLocation);
     }
 
-    private static void takeScreenShotAndStoreIt(WebDriver driver, String location) throws IOException {
+    private static String takeScreenshotAndStoreIt(WebDriver driver, String location) {
         String screenshotName = DateTimeUtil.generateUniqueTimeStamp("ss") + ".png";
         File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         File outputFile = new File(location, screenshotName);
-        FileUtils.copyFile(srcFile, outputFile);
+        try {
+            FileUtils.copyFile(srcFile, outputFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return outputFile.getAbsolutePath();
     }
 }

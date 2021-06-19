@@ -20,6 +20,6 @@ public class LoginTest extends TestBase {
 
     @Test(description = "Failing test.")
     public void failingTest(){
-        Assert.assertEquals(1, 0);
+        Assert.assertEquals(1, 0, "Verify if values are equal.");
     }
 }

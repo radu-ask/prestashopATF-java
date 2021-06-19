@@ -4,12 +4,10 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.Markup;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.model.Media;
-import com.prestashop.core.web.WebDriverUtil;
 import com.prestashop.core.utils.logger.LogUtil;
+import com.prestashop.core.web.WebDriverUtil;
 import com.prestashop.tests.base.utils.ExtentReportsUtil;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +15,6 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import java.util.Arrays;
 import java.util.Objects;
 
 public class TestProgressListener implements ITestListener {
@@ -29,7 +26,7 @@ public class TestProgressListener implements ITestListener {
     @Override
     public void onTestStart(ITestResult iTestResult) {
         logger.info(iTestResult.getMethod().getMethodName() + " started.");
-        logger.info(iTestResult.getMethod().getDescription());
+        logger.info("Description: " + iTestResult.getMethod().getDescription());
 
         ExtentTest currentTest = extentReports.createTest(getTestName(iTestResult));
         extentTest.set(currentTest);
@@ -39,8 +36,7 @@ public class TestProgressListener implements ITestListener {
     public void onTestSuccess(ITestResult iTestResult) {
         logger.info(iTestResult.getMethod().getMethodName() + " passed.");
 
-        String extentLogMessage = "<b>Test " + iTestResult.getMethod().getMethodName() + " passed successfully.</b>";
-        Markup markup = MarkupHelper.createLabel(extentLogMessage, ExtentColor.GREEN);
+        Markup markup = ExtentReportsUtil.getTestPassedSuccessfullyMarkup(iTestResult);
         extentTest.get().log(Status.PASS, markup);
     }
 
@@ -56,27 +52,22 @@ public class TestProgressListener implements ITestListener {
             logger.error("Failed to take a screenshot. The driver was null.");
         }
 
-        String methodName = iTestResult.getMethod().getMethodName();
-        String exceptionMessage = Arrays.toString(iTestResult.getThrowable().getStackTrace());
-        String extentLogMessage = "<details><summary><b><font color=red>" +
-                "Test failed. Click to see details. </font></b></summary>" +
-                exceptionMessage.replaceAll(",", "<br>") + "</details> \n";
+        String extentLogMessage = ExtentReportsUtil.getTestFailMessageForExtentReport(iTestResult);
         extentTest.get().fail(extentLogMessage);
 
         try {
             Media media = MediaEntityBuilder.createScreenCaptureFromPath(Objects.requireNonNull(screenshotPath)).build();
             extentTest.get().fail("<b><font color=orange>See screenshot.</font></b>", media);
         }catch (Exception e){
-            extentTest.get().fail("Failed to attach the screenshot.");
+            extentTest.get().fail("<b><font color=red>Failed to attach the screenshot.</font></b>");
         }
     }
 
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
         logger.info("Skipped with exception: " + iTestResult.getThrowable());
-
-        String extentLogMessage = "<b>Test " + iTestResult.getMethod().getMethodName() + " skipped.</b>";
-        Markup markup = MarkupHelper.createLabel(extentLogMessage, ExtentColor.ORANGE);
+        
+        Markup markup = ExtentReportsUtil.getTestSkippedMarkup(iTestResult);
         extentTest.get().log(Status.SKIP, markup);
     }
 

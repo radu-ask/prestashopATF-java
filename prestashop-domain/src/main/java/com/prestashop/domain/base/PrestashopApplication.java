@@ -28,4 +28,5 @@ public class PrestashopApplication extends WebApplication {
     // TODO: integrate the framework with cucumber BDD
     // TODO: integrate the framework with Jenkins - create app environment functionality
     // TODO: configure the test env from the Jenkins job
+    // TODO: implement a method to wait for page to load
 }

@@ -13,8 +13,10 @@ import java.util.Arrays;
 
 public class ExtentReportsUtil {
 
+    private static final String REPORT_EXTENSION = ".html";
+
     public static ExtentReports getInstance(){
-        String reportName = DateTimeUtil.generateTimeStamp("report") + ".html";
+        String reportName = DateTimeUtil.generateTimeStamp("report") + REPORT_EXTENSION;
         String reportPath = System.getProperty("user.dir") + "\\output\\reports\\" + reportName;
         ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
         sparkReporter.config().setEncoding("utf-8");

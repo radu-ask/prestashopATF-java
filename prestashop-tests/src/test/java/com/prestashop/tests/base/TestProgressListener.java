@@ -45,9 +45,10 @@ public class TestProgressListener implements ITestListener {
         logger.info("Failed with exception: " + iTestResult.getThrowable());
         Object currentClass = iTestResult.getInstance();
         WebDriver driver = ((TestBase)currentClass).getDriver();
+
         String screenshotPath = null;
         if(driver != null){
-            screenshotPath = WebDriverUtil.takeScreenshotAndStoreIt(driver);
+            screenshotPath = WebDriverUtil.takeScreenshot(driver, iTestResult);
         }else{
             logger.error("Failed to take a screenshot. The driver was null.");
         }

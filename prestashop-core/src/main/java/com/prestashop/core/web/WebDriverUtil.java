@@ -5,19 +5,23 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
 
 import java.io.File;
 import java.io.IOException;
 
 public class WebDriverUtil {
 
-    public static String takeScreenshotAndStoreIt(WebDriver driver){
+    private static final String SCREENSHOT_EXTENSION = ".png";
+
+    public static String takeScreenshot(WebDriver driver, ITestResult iTestResult){
+        String testName = iTestResult.getMethod().getMethodName();
+        String screenshotName = DateTimeUtil.generateUniqueTimeStamp(testName) + SCREENSHOT_EXTENSION;
         String defaultLocation = System.getProperty("user.dir") + "\\output\\screenshots";
-        return takeScreenshotAndStoreIt(driver, defaultLocation);
+        return takeScreenshot(driver, defaultLocation, screenshotName);
     }
 
-    private static String takeScreenshotAndStoreIt(WebDriver driver, String location) {
-        String screenshotName = DateTimeUtil.generateUniqueTimeStamp("ss") + ".png";
+    private static String takeScreenshot(WebDriver driver, String location, String screenshotName) {
         File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         File outputFile = new File(location, screenshotName);
         try {

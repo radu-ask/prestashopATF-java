@@ -1,4 +1,4 @@
-package com.prestashop.tests.base;
+package com.prestashop.tests.core;
 
 import com.prestashop.core.utils.logger.LogUtil;
 import org.apache.logging.log4j.Logger;

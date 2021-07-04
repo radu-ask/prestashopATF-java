@@ -1,4 +1,4 @@
-package com.prestashop.tests.base;
+package com.prestashop.tests.core;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -8,7 +8,7 @@ import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.model.Media;
 import com.prestashop.core.utils.logger.LogUtil;
 import com.prestashop.core.web.WebDriverUtil;
-import com.prestashop.tests.base.utils.ExtentReportsUtil;
+import com.prestashop.tests.core.utils.ExtentReportsUtil;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;

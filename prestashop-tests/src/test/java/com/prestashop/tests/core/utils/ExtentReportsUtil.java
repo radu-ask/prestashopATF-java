@@ -1,4 +1,4 @@
-package com.prestashop.tests.base.utils;
+package com.prestashop.tests.core.utils;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.markuputils.ExtentColor;

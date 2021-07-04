@@ -1,9 +1,8 @@
-package com.prestashop.domain.base;
+package com.prestashop.domain.core;
 
 import com.prestashop.core.utils.Constants;
 import com.prestashop.core.utils.logger.LogUtil;
 import com.prestashop.core.web.WebApplication;
-import com.prestashop.domain.pages.HomePage;
 import com.prestashop.domain.pages.components.NavigationMenu;
 import com.prestashop.domain.pages.components.TopHeader;
 import org.apache.logging.log4j.Logger;

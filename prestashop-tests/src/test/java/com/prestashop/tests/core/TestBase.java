@@ -1,9 +1,9 @@
-package com.prestashop.tests.base;
+package com.prestashop.tests.core;
 
 import com.prestashop.core.utils.logger.LogUtil;
 import com.prestashop.core.web.WebBrowserType;
 import com.prestashop.core.web.WebDriverFactory;
-import com.prestashop.domain.base.PrestashopApplication;
+import com.prestashop.domain.core.PrestashopApplication;
 import com.prestashop.domain.pages.HomePage;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;

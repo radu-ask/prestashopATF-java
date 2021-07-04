@@ -2,7 +2,7 @@ package com.prestashop.tests.login;
 
 import com.prestashop.core.utils.logger.LogUtil;
 import com.prestashop.domain.pages.HomePage;
-import com.prestashop.tests.base.TestBase;
+import com.prestashop.tests.core.TestBase;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;

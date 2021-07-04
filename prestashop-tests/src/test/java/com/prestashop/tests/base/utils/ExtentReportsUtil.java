@@ -25,7 +25,7 @@ public class ExtentReportsUtil {
         sparkReporter.config().setTheme(Theme.DARK);
 
         ExtentReports extentReports = new ExtentReports();
-        extentReports.setSystemInfo("Organization", "JetBrains");
+        extentReports.setSystemInfo("Organization", "JetBrains"); // TODO: insert values from Jenkins
         extentReports.setSystemInfo("Browser", "Chrome");
         extentReports.attachReporter(sparkReporter);
 

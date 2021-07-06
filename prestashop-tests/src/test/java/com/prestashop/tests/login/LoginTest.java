@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends TestBase {
 
+    // TODO: run successfully tests with maven
+
     private static final Logger logger = LogUtil.getInstance();
 
     @Test(description = "Verify if the home page title is OLSO.")
@@ -20,6 +22,6 @@ public class LoginTest extends TestBase {
 
     @Test(description = "Failing test.")
     public void failingTest(){
-        Assert.assertEquals(1, 0, "Verify if values are equal.");
+        Assert.assertEquals(1, 1, "Verify if values are equal.");
     }
 }

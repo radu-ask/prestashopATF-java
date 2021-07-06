@@ -9,9 +9,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
 
-@Listeners({TestProgressListener.class, TestExecutionListener.class,})
 public class TestBase {
 
     private final Logger logger = LogUtil.getInstance();

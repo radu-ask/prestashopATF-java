@@ -171,3 +171,4 @@ buildNumber.properties
 .history/
 prestashop-tests/logs/
 prestashop-tests/output/
+prestashop-tests-bdd/output/

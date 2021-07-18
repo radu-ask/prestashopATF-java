@@ -17,6 +17,11 @@
     </properties>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/test/resources/properties/cucumber</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

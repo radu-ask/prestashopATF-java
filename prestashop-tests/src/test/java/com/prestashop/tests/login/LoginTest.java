@@ -9,8 +9,6 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends TestBase {
 
-    // TODO: run successfully tests with maven
-
     private static final Logger logger = LogUtil.getInstance();
 
     @Test(description = "Verify if the home page title is OLSO.")

@@ -12,5 +12,4 @@ import org.junit.runner.RunWith;
                 "html:output/reports/cucumber.html"})
 public class PrestashopTestRunner {
     // TODO: integrate bdd module with web driver
-    // TODO: how to get resources?
  }

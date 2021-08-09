@@ -1,6 +1,6 @@
 package com.prestashop.tests.core;
 
-import com.prestashop.core.utils.logger.LogUtil;
+import com.prestashop.core.utils.LogUtil;
 import org.apache.logging.log4j.Logger;
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;

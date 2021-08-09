@@ -1,6 +1,6 @@
 package com.prestashop.tests.core;
 
-import com.prestashop.core.utils.logger.LogUtil;
+import com.prestashop.core.utils.LogUtil;
 import com.prestashop.core.web.WebBrowserType;
 import com.prestashop.core.web.WebDriverFactory;
 import com.prestashop.domain.core.PrestashopApplication;
@@ -38,7 +38,11 @@ public class TestBase {
         return driver;
     }
 
-    public HomePage getApp() {
+    public HomePage goToHomePage() {
         return new HomePage(driver);
+    }
+
+    public PrestashopApplication getApp(){
+        return prestashopApplication;
     }
 }

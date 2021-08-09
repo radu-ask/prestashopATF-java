@@ -1,7 +1,7 @@
 package com.prestashop.domain.core;
 
 import com.prestashop.core.utils.Constants;
-import com.prestashop.core.utils.logger.LogUtil;
+import com.prestashop.core.utils.LogUtil;
 import com.prestashop.core.web.WebApplication;
 import com.prestashop.domain.pages.components.NavigationMenu;
 import com.prestashop.domain.pages.components.TopHeader;

@@ -6,7 +6,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.model.Media;
-import com.prestashop.core.utils.logger.LogUtil;
+import com.prestashop.core.utils.LogUtil;
 import com.prestashop.core.web.WebDriverUtil;
 import com.prestashop.tests.core.utils.ExtentReportsUtil;
 import org.apache.logging.log4j.Logger;

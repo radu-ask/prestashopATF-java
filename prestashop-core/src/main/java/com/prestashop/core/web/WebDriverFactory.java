@@ -8,10 +8,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class WebDriverFactory {
-
-    private WebDriverFactory() {
-    }
+public final class WebDriverFactory {
+    private WebDriverFactory() { }
 
     public static WebDriver getDriver(WebBrowserType webBrowserType) {
         WebDriver driver = null;

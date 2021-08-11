@@ -18,7 +18,6 @@ import org.testng.ITestResult;
 import java.util.Objects;
 
 public class TestProgressListener implements ITestListener {
-
     private static final Logger logger = LogUtil.getInstance();
     private final ExtentReports extentReports = ExtentReportsUtil.getInstance();
     private final ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
@@ -27,7 +26,6 @@ public class TestProgressListener implements ITestListener {
     public void onTestStart(ITestResult iTestResult) {
         logger.info(iTestResult.getMethod().getMethodName() + " started.");
         logger.info("Description: " + iTestResult.getMethod().getDescription());
-
         ExtentTest currentTest = extentReports.createTest(getTestName(iTestResult));
         extentTest.set(currentTest);
     }
@@ -35,7 +33,6 @@ public class TestProgressListener implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
         logger.info(iTestResult.getMethod().getMethodName() + " passed.");
-
         Markup markup = ExtentReportsUtil.getTestPassedSuccessfullyMarkup(iTestResult);
         extentTest.get().log(Status.PASS, markup);
     }
@@ -67,7 +64,6 @@ public class TestProgressListener implements ITestListener {
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
         logger.info("Skipped with exception: " + iTestResult.getThrowable());
-
         Markup markup = ExtentReportsUtil.getTestSkippedMarkup(iTestResult);
         extentTest.get().log(Status.SKIP, markup);
     }

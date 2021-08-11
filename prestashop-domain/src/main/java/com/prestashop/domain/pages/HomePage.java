@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class HomePage extends WebBasePage {
-
     public HomePage(WebDriver driver) {
         super(driver);
     }

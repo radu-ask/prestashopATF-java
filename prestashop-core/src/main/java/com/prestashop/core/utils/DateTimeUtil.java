@@ -4,12 +4,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class DateTimeUtil {
+public final class DateTimeUtil {
+    private DateTimeUtil(){}
 
     private static final AtomicLong LAST_TIME_MS = new AtomicLong();
-
-    private DateTimeUtil() {
-    }
 
     public static String generateUniqueTimeStamp(String input){
         return input + getUniqueCurrentTimeMS();

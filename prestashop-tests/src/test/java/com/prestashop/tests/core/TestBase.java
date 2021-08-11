@@ -11,7 +11,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 public class TestBase {
-
     private final Logger logger = LogUtil.getInstance();
     private WebDriver driver;
     private PrestashopApplication prestashopApplication;

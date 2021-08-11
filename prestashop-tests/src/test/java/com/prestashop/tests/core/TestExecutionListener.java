@@ -7,7 +7,6 @@ import org.testng.IInvokedMethodListener;
 import org.testng.ITestResult;
 
 public class TestExecutionListener implements IInvokedMethodListener {
-
     private static final Logger logger = LogUtil.getInstance();
 
     @Override

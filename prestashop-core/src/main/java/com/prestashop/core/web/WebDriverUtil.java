@@ -11,8 +11,9 @@ import java.io.File;
 import java.io.IOException;
 
 public class WebDriverUtil {
-
     private static final String SCREENSHOT_EXTENSION = ".png";
+
+    private WebDriverUtil(){}
 
     public static String takeScreenshot(WebDriver driver, ITestResult iTestResult){
         String testName = iTestResult.getMethod().getMethodName();

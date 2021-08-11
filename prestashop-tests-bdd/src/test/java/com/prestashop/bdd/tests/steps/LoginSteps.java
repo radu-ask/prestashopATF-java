@@ -8,7 +8,6 @@ import io.cucumber.java.en.When;
 import org.testng.Assert;
 
 public class LoginSteps {
-
     private final StepsHelper stepsHelper;
 
     public LoginSteps(StepsHelper stepsHelper){

@@ -1,9 +1,7 @@
 package com.prestashop.core.utils;
 
-public class ThreadUtil {
-
-    private ThreadUtil(){
-    }
+public final class ThreadUtil {
+    private ThreadUtil(){}
 
     public static String getCurrentClassName(){
         return Thread.currentThread().getStackTrace()[2].getClassName();

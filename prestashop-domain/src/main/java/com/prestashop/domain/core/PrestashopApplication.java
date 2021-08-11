@@ -9,7 +9,6 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 public class PrestashopApplication extends WebApplication {
-
     private final Logger logger = LogUtil.getInstance();
 
     public PrestashopApplication(WebDriver driver) {

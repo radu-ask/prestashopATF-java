@@ -4,7 +4,6 @@ import com.prestashop.core.web.widgets.*;
 import org.openqa.selenium.WebElement;
 
 public class ElementFactory {
-
     public static CheckBox getAsCheckBox(WebElement element){
         return new CheckBoxImpl(element);
     }

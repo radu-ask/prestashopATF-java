@@ -1,6 +1,8 @@
 package com.prestashop.bdd.tests.steps;
 
+import com.prestashop.bdd.tests.core.PrestashopTestRunner;
 import com.prestashop.bdd.tests.core.StepsHelper;
+import com.prestashop.domain.core.PrestashopApplication;
 import com.prestashop.domain.pages.HomePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -17,7 +19,8 @@ public class LoginSteps {
     @Given("User is on HomePage")
     public void user_is_on_home_page() {
         System.out.println("step 2");
-        HomePage homePage = stepsHelper.goToHomePage();
+        PrestashopApplication prestashopApplication = stepsHelper.getApp();
+        HomePage homePage = prestashopApplication.goToHomePage();
         String expectedTitle = "OLSO";
         Assert.assertEquals(stepsHelper.getDriver().getTitle(), expectedTitle);
 

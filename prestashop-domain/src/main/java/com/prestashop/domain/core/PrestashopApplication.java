@@ -3,9 +3,11 @@ package com.prestashop.domain.core;
 import com.prestashop.core.utils.Constants;
 import com.prestashop.core.utils.LogUtil;
 import com.prestashop.core.web.WebApplication;
+import com.prestashop.domain.pages.HomePage;
 import com.prestashop.domain.pages.components.NavigationMenu;
 import com.prestashop.domain.pages.components.TopHeader;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 public class PrestashopApplication extends WebApplication {
@@ -13,6 +15,18 @@ public class PrestashopApplication extends WebApplication {
 
     public PrestashopApplication(WebDriver driver) {
         super(driver, Constants.APPLICATION_URL);
+    }
+
+    public HomePage goToHomePage(){
+        HomePage homePage = new HomePage(getDriver());
+        try { // TODO: implement fluent wait method to verify if element is displayed
+            if(homePage.getPopularProductsHeader().isDisplayed()){
+                return homePage;
+            }
+        }catch (NoSuchElementException exception){
+            getNavigationMenu().getLogo().click();
+        }
+        return homePage;
     }
 
     public NavigationMenu getNavigationMenu() {

@@ -21,10 +21,6 @@ public class StepsHelper {
     }
 
     public void setApp(PrestashopApplication prestashopApplication){
-
-    }
-
-    public HomePage goToHomePage() {
-        return new HomePage(driver);
+        this.prestashopApplication = prestashopApplication;
     }
 }

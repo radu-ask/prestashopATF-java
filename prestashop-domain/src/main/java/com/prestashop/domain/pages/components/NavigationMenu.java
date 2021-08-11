@@ -39,4 +39,8 @@ public class NavigationMenu extends WebBasePage {
     public TextBox getTextboxSearch() {
         return ElementFactory.getAsTextBox(textBoxSearch);
     }
+
+    public WebElement getLogo() {
+        return logo;
+    }
 }

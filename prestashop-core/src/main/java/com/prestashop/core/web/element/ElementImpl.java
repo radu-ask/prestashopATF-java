@@ -7,12 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/**
- * An implementation of the Element interface. It delegates its work to an underlying WebElement instance
- * for custom functionality.
- */
 public class ElementImpl implements Element {
-
     private final WebElement element;
 
     public ElementImpl(WebElement element) {

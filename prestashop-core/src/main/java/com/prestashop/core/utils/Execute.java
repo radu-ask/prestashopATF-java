@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.function.Supplier;
 
 public final class Execute {
+    private Execute(){}
 
     public static <T> T withRetry(Supplier<T> function, Supplier<Boolean> exitCondition) {
         return withRetry(Constants.MAX_RETRIES, function, exitCondition);

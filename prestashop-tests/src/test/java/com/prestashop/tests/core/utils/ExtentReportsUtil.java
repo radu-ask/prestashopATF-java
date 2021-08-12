@@ -1,4 +1,4 @@
-package com.prestashop.tests.base.utils;
+package com.prestashop.tests.core.utils;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -11,11 +11,21 @@ import org.testng.ITestResult;
 
 import java.util.Arrays;
 
-public class ExtentReportsUtil {
+public final class ExtentReportsUtil {
+    private final static String REPORT_EXTENSION = ".html";
 
-    private static final String REPORT_EXTENSION = ".html";
+    private ExtentReportsUtil(){}
 
     public static ExtentReports getInstance(){
+        ExtentSparkReporter sparkReporter = getSparkReporter();
+        ExtentReports extentReports = new ExtentReports();
+        extentReports.setSystemInfo("Organization", "JetBrains"); // TODO: insert values from Jenkins
+        extentReports.setSystemInfo("Browser", "Chrome");
+        extentReports.attachReporter(sparkReporter);
+        return extentReports;
+    }
+
+    private static ExtentSparkReporter getSparkReporter() {
         String reportName = DateTimeUtil.generateTimeStamp("report") + REPORT_EXTENSION;
         String reportPath = System.getProperty("user.dir") + "\\output\\reports\\" + reportName;
         ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
@@ -23,13 +33,7 @@ public class ExtentReportsUtil {
         sparkReporter.config().setDocumentTitle("Prestashop Reports");
         sparkReporter.config().setDocumentTitle("Prestashop Test Reports");
         sparkReporter.config().setTheme(Theme.DARK);
-
-        ExtentReports extentReports = new ExtentReports();
-        extentReports.setSystemInfo("Organization", "JetBrains");
-        extentReports.setSystemInfo("Browser", "Chrome");
-        extentReports.attachReporter(sparkReporter);
-
-        return extentReports;
+        return sparkReporter;
     }
 
     public static Markup getTestPassedSuccessfullyMarkup(ITestResult iTestResult) {

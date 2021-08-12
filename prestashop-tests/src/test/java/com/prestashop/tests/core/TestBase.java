@@ -1,19 +1,16 @@
-package com.prestashop.tests.base;
+package com.prestashop.tests.core;
 
-import com.prestashop.core.utils.logger.LogUtil;
+import com.prestashop.core.utils.LogUtil;
 import com.prestashop.core.web.WebBrowserType;
 import com.prestashop.core.web.WebDriverFactory;
-import com.prestashop.domain.base.PrestashopApplication;
+import com.prestashop.domain.core.PrestashopApplication;
 import com.prestashop.domain.pages.HomePage;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
 
-@Listeners({TestProgressListener.class, TestExecutionListener.class,})
 public class TestBase {
-
     private final Logger logger = LogUtil.getInstance();
     private WebDriver driver;
     private PrestashopApplication prestashopApplication;
@@ -40,7 +37,11 @@ public class TestBase {
         return driver;
     }
 
-    public HomePage getApp() {
+    public HomePage goToHomePage() {
         return new HomePage(driver);
+    }
+
+    public PrestashopApplication getApp(){
+        return prestashopApplication;
     }
 }
